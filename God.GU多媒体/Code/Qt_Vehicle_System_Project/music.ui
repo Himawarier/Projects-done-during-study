@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Music</class>
+ <widget class="QWidget" name="Music">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#widget{
+	background-image: url(:/UI/Img/02.bmp);
+}</string>
+     </property>
+     <widget class="QToolButton" name="returnBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>返回</string>
+      </property>
+      <property name="icon">
+       <iconset theme="QIcon::ThemeIcon::DocumentRevert"/>
+      </property>
+      <property name="toolButtonStyle">
+       <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+      </property>
+      <property name="autoRaise">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="songListWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>271</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget
+{
+	/*border-style: none; */
+	background-color: rgba(255, 255, 255, 50); 
+}</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="musicControlWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>430</y>
+        <width>800</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="leftMargin">
+        <number>15</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>15</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="openBtn">
+         <property name="text">
+          <string>打开文件</string>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::FolderOpen"/>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Policy::Maximum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>50</width>
+           <height>47</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QToolButton" name="lastBtn">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::MediaSkipBackward"/>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="playBtn">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::MediaPlaybackStart"/>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="nextBtn">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::MediaSkipForward"/>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSlider" name="musicSlider">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">/*1.滑动过的槽设计参数*/
+QSlider::sub-page:horizontal 
+{
+	background-color: rgb(253, 229, 255);		 /*槽颜色*/
+	border-radius: 2px;											 /*外环区域倒圆角度*/
+ 	margin-top:8px;												/*上遮住区域高度*/
+ 	margin-bottom:8px;										/*下遮住区域高度*/
+	/*width在这里无效，不写即可*/
+}
+
+/*2.未滑动过的槽设计参数*/
+QSlider::add-page:horizontal 
+{
+	background-color:rgb(255, 255, 255);	/*槽颜色*/
+	border: 0px solid #777;								/*外环大小0px就是不显示，默认也是0*/
+	border-radius: 2px;										/*外环区域倒圆角度*/
+	margin-top:9px;											/*上遮住区域高度*/
+	margin-bottom:9px;									/*下遮住区域高度*/
+}
+ 
+/*3.平时滑动的滑块设计参数*/
+QSlider::handle:horizontal 
+{
+	background: rgb(255, 170, 127);			/*滑块颜色*/
+	width: 5px;												/*滑块的宽度*/
+	border: 1px solid rgb(193,204,208);	/*滑块外环为1px，再加颜色*/
+	border-radius: 2px; 									/*滑块外环倒圆角度*/
+	margin-top:6px;										/*上遮住区域高度*/
+	margin-bottom:6px;								/*下遮住区域高度*/
+}
+
+/*4.手动拉动时显示的滑块设计参数*/
+QSlider::handle:horizontal:hover 
+{
+	background: rgb(128, 217, 255);/*滑块颜色*/
+	width: 10px;/*滑块的宽度*/
+	border: 1px solid rgb(193,204,208);/*滑块外环为1px，再加颜色*/
+	border-radius: 5px;  /*滑块外环倒圆角度*/
+ 	margin-top:4px;/*上遮住区域高度*/
+	margin-bottom:4px; /*下遮住区域高度*/
+}</string>
+         </property>
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Orientation::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="timeLabel">
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>26</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>00:00</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="volumeBtn">
+         <property name="layoutDirection">
+          <enum>Qt::LayoutDirection::RightToLeft</enum>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset theme="QIcon::ThemeIcon::AudioVolumeHigh"/>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::ToolButtonPopupMode::DelayedPopup</enum>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="lyricwidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>40</y>
+        <width>481</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QWidget
+{
+	border-style: none; 
+	background-color: rgba(255, 255, 255, 0); 
+}
+
+QLabel 
+{ 
+	font: 14pt &quot;华文隶书&quot;;
+	text-decoration: underline;
+	color: rgb(255, 170, 0); 
+	alignment: AlignCenter;    /*文本居中对齐*/
+}
+QLabel#lyric3
+{ 
+	color: rgb(109, 5, 255); 
+}
+
+QLabel#songName
+{ 
+	font: 16pt &quot;华文行楷&quot;;
+	color: rgb(255, 119, 0); 
+}
+</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="songName">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>100</height>
+          </size>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lyric1">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lyric2">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lyric3">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lyric4">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lyric5">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,10 @@
+debug/baidumap.o
+debug/main.o
+debug/music.o
+debug/video.o
+debug/widget.o
+debug/qrc_Src.o
+debug/moc_baidumap.o
+debug/moc_music.o
+debug/moc_video.o
+debug/moc_widget.o

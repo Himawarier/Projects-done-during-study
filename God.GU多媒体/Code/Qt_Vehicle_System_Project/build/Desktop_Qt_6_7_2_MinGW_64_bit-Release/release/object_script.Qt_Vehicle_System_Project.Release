@@ -1,0 +1,10 @@
+release/baidumap.o
+release/main.o
+release/music.o
+release/video.o
+release/widget.o
+release/qrc_Src.o
+release/moc_baidumap.o
+release/moc_music.o
+release/moc_video.o
+release/moc_widget.o

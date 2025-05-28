@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/UI">
+        <file>Img/Forza_Horizon_4.bmp</file>
+        <file>Img/BaiduMap.png</file>
+        <file>Img/music.png</file>
+        <file>Img/video.png</file>
+        <file>Img/daoce.png</file>
+        <file>Img/02.bmp</file>
+        <file>Img/780.jpg</file>
+        <file>Img/zoomBtn.png</file>
+        <file>Img/zj.png</file>
+    </qresource>
+</RCC>
